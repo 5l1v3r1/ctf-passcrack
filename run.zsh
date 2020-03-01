@@ -30,11 +30,11 @@ do
     echo $line
     if echo $line | grep -qF '$'
     then
-        result=$(./crypt-crack $line ./biglist.ls)
+        result=$(./crypt-crack $line ./biglist)
         echo "Crypt pass = \"$result\""
         echo $result > input
     else
-        result=$(./ntlm-crack.py $line ./biglist.ls)
+        result=$(./ntlm-crack.py $line ./biglist)
         echo "NTLM pass = \"$result\""
         echo $result > input
     fi
